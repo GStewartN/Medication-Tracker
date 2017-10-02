@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import medList from './med-list-reducer';
+import medicineList from './med-list-reducer';
+import { firebaseStateReducer as firebase } from 'react-redux-firebase';
 
 const combinedReducer = combineReducers({
-  medList
+  firebase,
+  medicineList
 });
 
 export default combinedReducer;
