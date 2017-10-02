@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import combinedReducer from './reducers/index';
 import { reduxFirebase } from 'react-redux-firebase';
 import firebaseCredentials from './constants/apiKeys.js';
+import { HashRouter } from 'react-router-dom';
 
 const createStoreWithFirebaseMiddleware = compose(
   reduxFirebase(firebaseCredentials)
@@ -17,7 +18,9 @@ const store = createStoreWithFirebaseMiddleware(
 
 ReactDOM.render(
   <Provider store={store}>
-      <App />
+    <HashRouter>
+      <App/>
+    </HashRouter>
   </Provider>,
   document.getElementById('react-app-root')
 );
