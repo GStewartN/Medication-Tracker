@@ -5,8 +5,13 @@ import About from "./About";
 import { Switch, Route } from 'react-router-dom';
 
 function App(props) {
+
+  var bodyStyle = {
+    backgroundColor: "grey"
+  }
+
   return (
-    <div className="container">
+    <div style={bodyStyle} className="container">
       <Header/>
       <Switch>
         <Route exact path='/' component={MasterMedList}/>

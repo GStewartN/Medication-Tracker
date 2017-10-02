@@ -22,10 +22,16 @@ class NewMedControl extends React.Component {
   }
 
   render() {
+
+    var buttonStyle = {
+      marginBottom: "10px"
+    }
+
     return (
       <div>
         <Button
-          bsStyle="primary"
+          style={buttonStyle}
+          block
           bsSize="small"
           onClick={this.showFormModal}>
           Add New Medicine

@@ -27,18 +27,16 @@ class NewMedForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleNewMedFormSubmission}>
-          <input
+          <textarea
             ref="_name"
             type="text"
             id="name"
             placeholder="Medicine Name"/>
-          <br></br>
           <textarea
             ref="_pillDescription"
             type="text"
             id="pillDescription"
             placeholder="Pill Description"/>
-          <br></br>
           <textarea
             ref="_doctorsOrders"
             type="text"
