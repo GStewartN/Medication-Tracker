@@ -1,20 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './components/App';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
 import combinedReducer from './reducers/index';
+import { reduxFirebase } from 'react-redux-firebase';
+import firebaseCredentials from './constants/apiKeys.js';
 
-const store = createStore(
-  combinedReducer,
-  applyMiddleware(
-    thunkMiddleware)
+const createStoreWithFirebaseMiddleware = compose(
+  reduxFirebase(firebaseCredentials)
+)(createStore);
+
+const store = createStoreWithFirebaseMiddleware(
+  combinedReducer
 );
 
 ReactDOM.render(
   <Provider store={store}>
-      <App/>
+      <App />
   </Provider>,
-  document.getElementById("react-app-root")
+  document.getElementById('react-app-root')
 );
