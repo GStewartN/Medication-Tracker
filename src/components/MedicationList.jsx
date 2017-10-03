@@ -20,14 +20,16 @@ function MedicationList(props){
           pillDescription={medication.pillDescription}
           doctorsOrders={medication.doctorsOrders}
           key={index}
-          id={medication.id}/>
+          id={medication.id}
+          handleRemovingMedicine={props.handleRemovingMedicine}/>
       )}
     </div>
   );
 }
 
 MedicationList.propTypes = {
-  medList: PropTypes.array
+  medicineList: PropTypes.array,
+  handleRemovingMedicine: PropTypes.func
 };
 
 export default MedicationList;

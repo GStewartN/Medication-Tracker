@@ -11,6 +11,9 @@ const medicineList = (state = [], action) => {
           id: id
         }
       ]
+    case "REMOVE_MEDICINE":
+      const updatedMedicineList = state.filter(medicine => medicine.id !== action.id);
+      return updatedMedicineList
     default:
       return state;
   }

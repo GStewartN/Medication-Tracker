@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 function Medication(props) {
   var medStyle = {
@@ -14,6 +15,8 @@ function Medication(props) {
       <p>{props.pillDescription}</p>
       <h5>Doctors Orders:</h5>
       <p>{props.doctorsOrders}</p>
+      <Button>Take Medicine</Button>
+      <Button onClick={() => {props.handleRemovingMedicine(props.id)}}>Discontinue Medicine</Button>
       <hr/>
     </div>
   );
@@ -22,7 +25,8 @@ function Medication(props) {
 Medication.propTypes = {
   name: PropTypes.string.isRequired,
   pillDescription: PropTypes.string.isRequired,
-  doctorsOrders: PropTypes.string.isRequired
+  doctorsOrders: PropTypes.string.isRequired,
+  handleRemovingMedicine: PropTypes.func
 };
 
 export default Medication;

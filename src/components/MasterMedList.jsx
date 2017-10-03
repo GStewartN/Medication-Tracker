@@ -1,4 +1,5 @@
 import React from "react";
+import Medication from "./Medication";
 import MedicationList from './MedicationList';
 import NewMedControl from './NewMedControl';
 import {connect} from 'react-redux';
@@ -8,6 +9,12 @@ class MasterMedList extends React.Component{
 
   constructor(props){
     super(props);
+    this.handleRemovingMedicine = this.handleRemovingMedicine.bind(this);
+  }
+
+  handleRemovingMedicine(medicationId){
+    const { firebase } = this.props;
+    firebase.remove(`/medications/${medicationId}`);
   }
 
   render() {
@@ -24,7 +31,8 @@ class MasterMedList extends React.Component{
         Object.keys(firebaseDatabaseObject).map(key => {
           newMedArray.push(Object.assign(firebaseDatabaseObject[key], {"id": key}));
         })
-        contentFromFirebase = <MedicationList medicineList={newMedArray}/>
+        contentFromFirebase = <MedicationList medicineList={newMedArray}
+                                              handleRemovingMedicine={this.handleRemovingMedicine}/>
       }
     }
 
