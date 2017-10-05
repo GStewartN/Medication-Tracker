@@ -7,18 +7,20 @@ import { Switch, Route } from 'react-router-dom';
 
 function App(props) {
 
-  var bodyStyle = {
+  const bodyStyle = {
     backgroundColor: "grey"
   }
 
   return (
-    <div style={bodyStyle} className="container">
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={MasterMedList}/>
-        <Route exact path='/about' component={About}/>
-        <Route exact path="/delete" component={DeleteMed}/>
-      </Switch>
+    <div>
+      <div style={bodyStyle} className="container">
+        <Header/>
+        <Switch>
+          <Route exact path='/' component={MasterMedList}/>
+          <Route exact path='/about' component={About}/>
+          <Route exact path="/delete" component={DeleteMed}/>
+        </Switch>
+      </div>
     </div>
   );
 }

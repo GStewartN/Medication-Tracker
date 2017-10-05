@@ -6,7 +6,7 @@ function MedicationList(props){
 
   const titleStyle = {
     backgroundColor: "lightgrey",
-    paddingLeft: "5px",
+    marginBottom: "10px",
     paddingTop: "1px"
   }
 
@@ -17,7 +17,7 @@ function MedicationList(props){
   return (
     <div style={titleStyle}>
       <h3 style={subStyle}>Medications:</h3>
-      <hr/>
+      
       {props.medicineList.map((medication, index) =>
         <Medication
           name={medication.name}

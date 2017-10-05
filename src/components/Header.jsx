@@ -5,7 +5,8 @@ function Header(props) {
 
   const bodyStyle = {
     backgroundColor: "lightgrey",
-    paddingLeft: "5px"
+    paddingLeft: "5px",
+    marginBottom: "10px"
   }
 
   const titleStyle = {
@@ -16,7 +17,7 @@ function Header(props) {
     <div style={bodyStyle}>
       <h1 style={titleStyle}>Medication Tracker</h1>
       <Link to='/'>Home</Link> | <Link to="/about">About</Link> | <Link to="/delete">Discontinue Medicine</Link>
-      <hr/>
+
     </div>
   );
 }

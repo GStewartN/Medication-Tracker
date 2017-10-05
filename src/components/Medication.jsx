@@ -5,14 +5,14 @@ import Moment from "moment";
 
 function Medication(props) {
 
-  var medStyle = {
+  const medStyle = {
     backgroundColor: "lightgrey",
     paddingLeft: "5px",
     borderWidth: "thin",
     borderStyle: "solid"
   }
 
-  var removeButtonStyle = {
+  const removeButtonStyle = {
     marginRight: "5px"
   }
 
@@ -39,14 +39,12 @@ function Medication(props) {
           bsSize="small"
           bsStyle="danger"
           onClick={() => {props.handleRemovingMedicine(props.id)}}>Discontinue Medicine</Button>
-        <hr/>
       </div>
     );
   } else {
     return(
       <div>
         {medicineDetails}
-        <hr/>
       </div>
     );
   }
