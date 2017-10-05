@@ -4,15 +4,19 @@ import PropTypes from "prop-types";
 
 function MedicationList(props){
 
-  var titleStyle = {
+  const titleStyle = {
     backgroundColor: "lightgrey",
     paddingLeft: "5px",
     paddingTop: "1px"
   }
 
+  const subStyle = {
+    textAlign: "center"
+  }
+
   return (
     <div style={titleStyle}>
-      <h3>Medications:</h3>
+      <h3 style={subStyle}>Medications:</h3>
       <hr/>
       {props.medicineList.map((medication, index) =>
         <Medication

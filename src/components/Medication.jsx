@@ -7,7 +7,9 @@ function Medication(props) {
 
   var medStyle = {
     backgroundColor: "lightgrey",
-    paddingLeft: "5px"
+    paddingLeft: "5px",
+    borderWidth: "thin",
+    borderStyle: "solid"
   }
 
   var removeButtonStyle = {

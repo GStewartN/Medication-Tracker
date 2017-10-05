@@ -46,8 +46,8 @@ class MasterMedList extends React.Component{
 
     return (
       <div>
-        {contentFromFirebase}
         <NewMedControl/>
+        {contentFromFirebase}
       </div>
     );
   }

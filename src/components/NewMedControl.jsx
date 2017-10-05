@@ -24,7 +24,8 @@ class NewMedControl extends React.Component {
   render() {
 
     var buttonStyle = {
-      marginBottom: "10px"
+      marginBottom: "10px",
+      fontWeight: "bold"
     }
 
     return (
