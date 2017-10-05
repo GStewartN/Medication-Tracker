@@ -21,7 +21,8 @@ function MedicationList(props){
           doctorsOrders={medication.doctorsOrders}
           key={index}
           id={medication.id}
-          handleRemovingMedicine={props.handleRemovingMedicine}/>
+          handleRemovingMedicine={props.handleRemovingMedicine}
+          currentRoute={props.currentRoute}/>
       )}
     </div>
   );
@@ -29,7 +30,8 @@ function MedicationList(props){
 
 MedicationList.propTypes = {
   medicineList: PropTypes.array,
-  handleRemovingMedicine: PropTypes.func
+  handleRemovingMedicine: PropTypes.func,
+  currentRoute: PropTypes.string
 };
 
 export default MedicationList;

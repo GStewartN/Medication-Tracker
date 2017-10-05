@@ -11,7 +11,7 @@ function Header(props) {
   return (
     <div style={bodyStyle}>
       <h1>Medication Tracker</h1>
-      <Link to='/'>Home</Link> | <Link to="/about">About</Link>
+      <Link to='/'>Home</Link> | <Link to="/about">About</Link> | <Link to="/delete">Discontinue Medicine</Link>
       <hr/>
     </div>
   );
