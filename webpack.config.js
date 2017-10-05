@@ -1,32 +1,32 @@
-const webpack = require('webpack');
-const { resolve } = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    "react-hot-loader/patch",
+    "webpack-dev-server/client?http://localhost:8080",
+    "webpack/hot/only-dev-server",
     resolve(__dirname, "src", "index.jsx")
   ],
 
   output: {
-    filename: 'app.bundle.js',
-    path: resolve(__dirname, 'build'),
-    publicPath: '/'
+    filename: "app.bundle.js",
+    path: resolve(__dirname, "build"),
+    publicPath: "/"
   },
 
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"]
   },
 
-  devtool: '#source-map',
+  devtool: "#source-map",
 
   devServer: {
     hot: true,
-    contentBase: resolve(__dirname, 'build'),
-    publicPath: '/'
+    contentBase: resolve(__dirname, "build"),
+    publicPath: "/"
   },
 
   module: {
@@ -47,20 +47,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader'
+        loader: "style-loader"
       },
       {
         test: /\.css$/,
-        loader: 'css-loader',
+        loader: "css-loader",
         exclude: resolve(__dirname, "src/styles/styles.css"),
         options: {
          modules: true,
-         localIdentName: '[name]__[local]___[hash:base64:5]'
+         localIdentName: "[name]__[local]___[hash:base64:5]"
        }
      },
      {
        test: resolve(__dirname, "src/styles/styles.css"),
-       loader: 'css-loader'
+       loader: "css-loader"
      }
     ]
   },
@@ -69,9 +69,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template:'template.ejs',
-      appMountId: 'react-app-root',
-      title: 'Medication Tracker',
+      template: "template.ejs",
+      appMountId: "react-app-root",
+      title: "Medication Tracker",
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ],

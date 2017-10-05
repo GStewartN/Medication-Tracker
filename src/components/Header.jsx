@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Header(props) {
 
@@ -16,8 +16,7 @@ function Header(props) {
   return (
     <div style={bodyStyle}>
       <h1 style={titleStyle}>Medication Tracker</h1>
-      <Link to='/'>Home</Link> | <Link to="/about">About</Link> | <Link to="/delete">Discontinue Medicine</Link>
-
+      <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/delete">Discontinue Medicine</Link>
     </div>
   );
 }

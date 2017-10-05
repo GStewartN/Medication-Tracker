@@ -1,6 +1,6 @@
 const medicineList = (state = [], action) => {
     switch (action.type) {
-    case 'ADD_MEDICINE':
+    case "ADD_MEDICINE":
       const { name, pillDescription, doctorsOrders, id } = action;
       return [
         ...state,

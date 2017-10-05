@@ -1,8 +1,8 @@
 import React from "react";
 import Medication from "./Medication";
-import MedicationList from './MedicationList';
-import {connect} from 'react-redux';
-import { firebase, isLoaded, isEmpty, dataToJS } from 'react-redux-firebase';
+import MedicationList from "./MedicationList";
+import {connect} from "react-redux";
+import { firebase, isLoaded, isEmpty, dataToJS } from "react-redux-firebase";
 
 class DeleteMed extends React.Component{
 
@@ -47,10 +47,10 @@ class DeleteMed extends React.Component{
   }
 }
 
-const firebaseWrappedComponent = firebase(['/medications'])(DeleteMed);
+const firebaseWrappedComponent = firebase(["/medications"])(DeleteMed);
 
 export default connect(
   ({firebase}) => ({
-    firebaseDatabaseObject: dataToJS(firebase, 'medications')
+    firebaseDatabaseObject: dataToJS(firebase, "medications")
   })
 )(firebaseWrappedComponent);
