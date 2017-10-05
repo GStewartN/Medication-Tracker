@@ -18,7 +18,8 @@ class NewMedForm extends React.Component {
        firebase.push('/medications', {
          name: _name.value,
          pillDescription: _pillDescription.value,
-         doctorsOrders: _doctorsOrders.value
+         doctorsOrders: _doctorsOrders.value,
+         timeTaken: new Date().getTime()
        })
     this.props.hideFormAfterSubmission();
   }

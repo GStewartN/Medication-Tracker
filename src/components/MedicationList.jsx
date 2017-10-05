@@ -19,9 +19,11 @@ function MedicationList(props){
           name={medication.name}
           pillDescription={medication.pillDescription}
           doctorsOrders={medication.doctorsOrders}
+          timeTaken={medication.timeTaken}
           key={index}
           id={medication.id}
           handleRemovingMedicine={props.handleRemovingMedicine}
+          handleTakingMedicine={props.handleTakingMedicine}
           currentRoute={props.currentRoute}/>
       )}
     </div>
@@ -31,6 +33,7 @@ function MedicationList(props){
 MedicationList.propTypes = {
   medicineList: PropTypes.array,
   handleRemovingMedicine: PropTypes.func,
+  handleTakingMedicine: PropTypes.func,
   currentRoute: PropTypes.string
 };
 

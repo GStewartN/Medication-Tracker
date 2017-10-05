@@ -9,6 +9,26 @@ class MasterMedList extends React.Component{
 
   constructor(props){
     super(props);
+    this.handleTakingMedicine = this.handleTakingMedicine.bind(this);
+    this.updateTimeSinceTaken = this.updateTimeSinceTaken.bind(this);
+  }
+
+  handleTakingMedicine(medicationId){
+    console.log("CLICK");
+  }
+
+  componentDidMount(){
+    this.timeSinceTakenChecker = setInterval(() =>
+      this.updateTimeSinceTaken(),
+    );
+  }
+
+  updateTimeSinceTaken(){
+    this.forceUpdate();
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.timeSinceTakenChecker);
   }
 
   render() {
@@ -25,7 +45,8 @@ class MasterMedList extends React.Component{
         Object.keys(firebaseDatabaseObject).map(key => {
           newMedArray.push(Object.assign(firebaseDatabaseObject[key], {"id": key}));
         })
-        contentFromFirebase = <MedicationList medicineList={newMedArray}/>
+        contentFromFirebase = <MedicationList medicineList={newMedArray}
+                                              handleTakingMedicine={this.handleTakingMedicine}/>
       }
     }
 
