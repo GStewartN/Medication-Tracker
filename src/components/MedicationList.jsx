@@ -19,6 +19,7 @@ function MedicationList(props){
           name={medication.name}
           pillDescription={medication.pillDescription}
           doctorsOrders={medication.doctorsOrders}
+          sideEffects={medication.sideEffects}
           timeTaken={medication.timeTaken}
           key={index}
           id={medication.id}

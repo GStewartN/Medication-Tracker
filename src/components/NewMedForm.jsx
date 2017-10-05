@@ -13,12 +13,13 @@ class NewMedForm extends React.Component {
 
   handleNewMedFormSubmission(event) {
     event.preventDefault()
-    const { _name, _pillDescription, _doctorsOrders } = this.refs;
+    const { _name, _pillDescription, _doctorsOrders, _sideEffects } = this.refs;
     const { firebase } = this.props;
        firebase.push('/medications', {
          name: _name.value,
          pillDescription: _pillDescription.value,
          doctorsOrders: _doctorsOrders.value,
+         sideEffects: _sideEffects.value,
          timeTaken: new Date().getTime()
        })
     this.props.hideFormAfterSubmission();
@@ -43,6 +44,11 @@ class NewMedForm extends React.Component {
             type="text"
             id="doctorsOrders"
             placeholder="Doctors Orders"/>
+            <textarea
+              ref="_sideEffects"
+              type="text"
+              id="sideEffects"
+              placeholder="Known Side Effects"/>
           <button type="submit">Add Medicine</button>
         </form>
 

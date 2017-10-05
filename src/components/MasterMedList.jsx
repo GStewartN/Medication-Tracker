@@ -3,7 +3,7 @@ import Medication from "./Medication";
 import MedicationList from './MedicationList';
 import NewMedControl from './NewMedControl';
 import {connect} from 'react-redux';
-import { firebase, isLoaded, isEmpty, dataToJS } from 'react-redux-firebase'
+import { firebase, isLoaded, isEmpty, dataToJS } from 'react-redux-firebase';
 
 class MasterMedList extends React.Component{
 

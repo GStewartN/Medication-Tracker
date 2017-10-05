@@ -23,6 +23,8 @@ function Medication(props) {
       <p>{props.pillDescription}</p>
       <h5>Doctors Orders:</h5>
       <p>{props.doctorsOrders}</p>
+      <h5>Side Effects:</h5>
+      <p>{props.sideEffects}</p>
       <h5>Last Taken:</h5>
       <p>{timeSinceTaken}</p>
     </div>
@@ -50,9 +52,10 @@ function Medication(props) {
 }
 
 Medication.propTypes = {
-  name: PropTypes.string.isRequired,
-  pillDescription: PropTypes.string.isRequired,
-  doctorsOrders: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  pillDescription: PropTypes.string,
+  doctorsOrders: PropTypes.string,
+  sideEffects: PropTypes.string,
   timeTaken: PropTypes.number,
   handleRemovingMedicine: PropTypes.func,
   handleTakingMedicine: PropTypes.func,
