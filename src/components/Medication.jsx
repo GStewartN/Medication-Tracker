@@ -44,7 +44,6 @@ function Medication(props) {
     return(
       <div>
         {medicineDetails}
-        <Button onClick={() => {props.handleTakingMedicine(props.id)}}>Reset Medicine Timer</Button>
         <hr/>
       </div>
     );
@@ -58,7 +57,6 @@ Medication.propTypes = {
   sideEffects: PropTypes.string,
   timeTaken: PropTypes.number,
   handleRemovingMedicine: PropTypes.func,
-  handleTakingMedicine: PropTypes.func,
   currentRoute: PropTypes.string
 };
 
